@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
 
 const auth = getAuth(app);
