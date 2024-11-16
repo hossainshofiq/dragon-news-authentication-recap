@@ -1,5 +1,6 @@
 import { FaShareAlt, FaRegEye } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const NewsCard = (props = {}) => {
   const { news } = props || {};
@@ -35,7 +36,7 @@ const NewsCard = (props = {}) => {
       {/* Details */}
       <p className="text-gray-700 text-sm mb-4">
         {news.details.slice(0, 150)}...{" "}
-        <span className="text-primary">Read More</span>
+        <Link to={`/news/${news._id}`} className="text-primary">Read More</Link>
       </p>
 
       {/* Ratings and Views */}
@@ -50,20 +51,16 @@ const NewsCard = (props = {}) => {
               }`}
             />
           ))}
-          <span className="ml-2 font-semibold">{news.rating.number}</span>
+          <Link className="ml-2 font-semibold">{news.rating.number}</Link>
         </div>
 
         {/* Views */}
         <div className="flex items-center">
           <FaRegEye className="mr-1" />
-          <span>{news.total_view}</span>
+          <Link>{news.total_view}</Link>
         </div>
       </div>
     </div>
   );
 };
 export default NewsCard;
-
-// Sample news
-
-//
